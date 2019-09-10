@@ -1,7 +1,5 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import * as contentful from "contentful";
 import "typeface-roboto";
 import "typeface-montserrat";
 import { makeStyles } from "@material-ui/core/styles";
@@ -11,11 +9,6 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
-
-const client = contentful.createClient({
-  space: "g0omatv81ux3",
-  accessToken: "9Ulv6nTh08-nO_1Mu1pEoOrjVB2YxCV7mDBNE8UyXt0"
-});
 
 const useStyles = makeStyles({
   card: {

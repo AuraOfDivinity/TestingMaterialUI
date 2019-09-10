@@ -3,9 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import EmployeeCard from "./EmployeeCard.js";
 import * as contentful from "contentful";
-import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 const client = contentful.createClient({
   space: "g0omatv81ux3",
@@ -15,7 +13,8 @@ const client = contentful.createClient({
 class EmployeeList extends Component {
   state = {
     employees: [],
-    searchString: ""
+    searchString: "",
+    selectedEmployee: null
   };
 
   constructor() {
@@ -53,6 +52,14 @@ class EmployeeList extends Component {
     console.log(this.state.employees);
   };
 
+  sendDataUpstream(value) {
+    this.props.sendData();
+  }
+
+  handleChange = (key, event) => {
+    this.props.onSelectEmployee(key);
+  };
+
   render() {
     return (
       <div>
@@ -87,7 +94,7 @@ class EmployeeList extends Component {
                       margin: "10px",
                       maxWidth: 150
                     }}
-                    // SelectedEmployee={props.employee}
+                    onClick={e => this.handleChange(currentEmployee.sys.id, e)}
                   >
                     More Details
                   </Button>
