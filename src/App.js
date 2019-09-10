@@ -5,6 +5,7 @@ import EmployeeList from "./components/EmployeeList.js";
 import "./App.css";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import EmployeeDetails from "./components/EmployeeDetails.js";
 import { makeStyles } from "@material-ui/core/styles";
 
 const contentful = require("contentful");
@@ -21,12 +22,8 @@ function App() {
             </Paper>
           </Grid>
           <Grid item xs={6}>
-            <Paper
-              style={{
-                textAlign: "center"
-              }}
-            >
-              Hello world
+            <Paper style={{ minHeight: "100%" }}>
+              <EmployeeDetails />
             </Paper>
           </Grid>
         </Grid>

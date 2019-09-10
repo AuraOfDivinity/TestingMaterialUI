@@ -12,7 +12,8 @@ const client = contentful.createClient({
 class EmployeeList extends Component {
   state = {
     employees: [],
-    searchString: ""
+    searchString: "",
+    selectedEmployee  = null,
   };
 
   constructor() {
@@ -64,7 +65,7 @@ class EmployeeList extends Component {
             <Grid container spacing={2} style={{ padding: 24 }}>
               {this.state.employees.map(currentEmployee => (
                 <Grid item xs={12} sm={12} lg={12} xl={12}>
-                  <EmployeeCard employee={currentEmployee}></EmployeeCard>
+                  <EmployeeCard employee={this.state.selectedEmployee}></EmployeeCard>
                 </Grid>
               ))}
             </Grid>
