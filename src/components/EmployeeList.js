@@ -61,9 +61,9 @@ class EmployeeList extends Component {
               margin="normal"
               onChange={this.onSearchInputChange}
             ></TextField>
-            <Grid container spacing={24} style={{ padding: 24 }}>
+            <Grid container spacing={2} style={{ padding: 24 }}>
               {this.state.employees.map(currentEmployee => (
-                <Grid item xs={12} sm={6} lg={4} xl={3}>
+                <Grid item xs={12} sm={12} lg={12} xl={12}>
                   <EmployeeCard employee={currentEmployee}></EmployeeCard>
                 </Grid>
               ))}
