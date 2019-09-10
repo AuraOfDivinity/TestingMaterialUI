@@ -16,12 +16,12 @@ function App() {
       <NavBar></NavBar>
       <div>
         <Grid container xs={12} spacing={5} style={{ padding: "30px" }}>
-          <Grid item xs={6}>
+          <Grid item xs={5}>
             <Paper>
               <EmployeeList />
             </Paper>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={7}>
             <Paper style={{ minHeight: "100%" }}>
               <EmployeeDetails />
             </Paper>
