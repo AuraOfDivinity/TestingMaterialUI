@@ -8,12 +8,11 @@ import EmployeeDetails from "./components/EmployeeDetails.js";
 
 class App extends React.Component {
   state = {
-    selectedEmployee: null
+    selectedEmployee: ""
   };
 
   handleSelection = employeeValue => {
     this.setState({ selectedEmployee: employeeValue });
-    console.log("from parent" + employeeValue);
   };
 
   render() {
@@ -29,7 +28,7 @@ class App extends React.Component {
             </Grid>
             <Grid item xs={7}>
               <Paper style={{ minHeight: "100%" }}>
-                <EmployeeDetails />
+                <EmployeeDetails chosenOne={this.state.selectedEmployee} />
               </Paper>
             </Grid>
           </Grid>

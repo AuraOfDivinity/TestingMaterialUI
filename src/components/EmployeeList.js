@@ -58,6 +58,7 @@ class EmployeeList extends Component {
 
   handleChange = (key, event) => {
     this.props.onSelectEmployee(key);
+    console.log(key);
   };
 
   render() {
